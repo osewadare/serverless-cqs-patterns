@@ -1,0 +1,87 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Transform": "AWS::Serverless-2016-10-31",
+    "Description": "An AWS Serverless Application.",
+    "Resources": {
+        "GetBook": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "Basic_Serverless_dotNet_Media_CQS::Basic_Serverless_dotNet_Media_CQS.Functions::GetBook",
+                "Runtime": "dotnet6",
+                "CodeUri": "",
+                "MemorySize": 256,
+                "Timeout": 30,
+                "Role": null,
+                "Policies": [
+                    "AWSLambdaBasicExecutionRole"
+                ],
+                "Events": {
+                    "RootGet": {
+                        "Type": "Api",
+                        "Properties": {
+                            "Path": "/book/{bookId}",
+                            "Method": "GET"
+                        }
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3449b4ca-f87c-4e0a-a53e-3097cc970bbd"
+                }
+            }
+        },
+        "GetBooks": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "Basic_Serverless_dotNet_Media_CQS::Basic_Serverless_dotNet_Media_CQS.Functions::GetBooks",
+                "Runtime": "dotnet6",
+                "CodeUri": "",
+                "MemorySize": 256,
+                "Timeout": 30,
+                "Role": null,
+                "Policies": [
+                    "AWSLambdaBasicExecutionRole"
+                ],
+                "Events": {
+                    "RootGet": {
+                        "Type": "Api",
+                        "Properties": {
+                            "Path": "/books",
+                            "Method": "GET"
+                        }
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3449b4ca-f87c-4e0a-a53e-3097cc970bbd"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "ApiURL": {
+            "Description": "API endpoint URL for Prod environment",
+            "Value": {
+                "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+            }
+        }
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "3449b4ca-f87c-4e0a-a53e-3097cc970bbd": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -110,
+                    "y": 60
+                },
+                "z": 1,
+                "embeds": []
+            }
+        }
+    }
+}
