@@ -11,7 +11,7 @@ namespace Servls_dotNet_Mediator_CQS.Host
     {
         public static string GetParameterValue(this APIGatewayProxyRequest request, string parameterName)
         {
-            string parameterValue = null;
+            string parameterValue = string.Empty;
             if (request.PathParameters != null && request.PathParameters.ContainsKey(parameterName))
                 parameterValue = request.PathParameters[parameterName];
             else if (request.QueryStringParameters != null && request.QueryStringParameters.ContainsKey(parameterName))

@@ -1,6 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using LMCD.Domain.Repository;
+using Servls_dotNet_Mediator_CQS.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

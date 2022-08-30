@@ -1,6 +1,7 @@
-﻿using LMCD.Domain.Entities;
-using LMCD.Domain.Repository;
+﻿
 using MediatR;
+using Servls_dotNet_Mediator_CQS.Domain.Entities;
+using Servls_dotNet_Mediator_CQS.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

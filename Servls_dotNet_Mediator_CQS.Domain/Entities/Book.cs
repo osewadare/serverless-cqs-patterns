@@ -9,8 +9,8 @@ namespace Servls_dotNet_Mediator_CQS.Domain.Entities
 
     public class Book
     {
-        public string BookId { get; set; }
-        public string Name  { get; set; }
+        public string BookId { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         public DateTime CreatedDate { get; set; }
 
         public Book()

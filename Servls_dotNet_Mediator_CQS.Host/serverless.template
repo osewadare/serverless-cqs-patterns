@@ -6,7 +6,7 @@
         "GetBook": {
             "Type": "AWS::Serverless::Function",
             "Properties": {
-                "Handler": "Basic_Serverless_dotNet_Media_CQS::Basic_Serverless_dotNet_Media_CQS.Functions::GetBook",
+                "Handler": "Servls_dotNet_Mediator_CQS.Host::Servls_dotNet_Mediator_CQS.Host.Functions::GetBook",
                 "Runtime": "dotnet6",
                 "CodeUri": "",
                 "MemorySize": 256,
@@ -34,7 +34,7 @@
         "GetBooks": {
             "Type": "AWS::Serverless::Function",
             "Properties": {
-                "Handler": "Basic_Serverless_dotNet_Media_CQS::Basic_Serverless_dotNet_Media_CQS.Functions::GetBooks",
+                "Handler": "Servls_dotNet_Mediator_CQS.Host::Servls_dotNet_Mediator_CQS.Host.Functions::GetBooks",
                 "Runtime": "dotnet6",
                 "CodeUri": "",
                 "MemorySize": 256,
