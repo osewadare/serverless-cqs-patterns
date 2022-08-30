@@ -4,27 +4,23 @@ using Amazon.Lambda.APIGatewayEvents;
 using MediatR;
 using Servls_dotNet_Mediator_CQS.Domain.Entities;
 using Servls_dotNet_Mediator_CQS.Domain.Queries;
-using Servls_dotNet_Mediator_CQS.Host;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace Basic_Serverless_dotNet_Media_CQS;
+namespace Servls_dotNet_Mediator_CQS.Host;
 
 public class Functions
 {
     /// <summary>
     /// Default constructor that Lambda will invoke.
     /// </summary>
+    private readonly IMediator mediator;
     public Functions()
     {
-    }
-
-    private readonly IMediator mediator;
-    public Functions(IMediator mediator)
-    {
-        this.mediator = mediator;
+        this.mediator = Startup.ConfigureServices().GetService<IMediator>();
     }
 
 
