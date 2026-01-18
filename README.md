@@ -1,3 +1,3 @@
-# Basic_Serverless_dotNet_Media_CQS
+#Serverless .NET Media CQS Template
 
-A basic template for .NET Serverless applications using the Mediator and CQS Patterns
+A foundational template for building serverless applications in .NET, leveraging the Mediator and Command Query Separation (CQS) design patterns.
